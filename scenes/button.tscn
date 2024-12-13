@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://kmin3qid66hb"]
+
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_t7itb"]
+[ext_resource type="Texture2D" uid="uid://csewtaq52ayfg" path="res://art/button/UI_Flat_Button02a_1.png" id="1_wdr4r"]
+[ext_resource type="Texture2D" uid="uid://doka6xja78g8n" path="res://art/button/UI_Flat_Button02a_2.png" id="2_dynqh"]
+[ext_resource type="Texture2D" uid="uid://cmpqw3vpny1oh" path="res://art/button/UI_Flat_Button02a_3.png" id="3_v6rg1"]
+[ext_resource type="Texture2D" uid="uid://dtcuyyokrjo01" path="res://art/button/UI_Flat_Button02a_4.png" id="4_nkfx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m7412"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nkfx3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nkfx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v6rg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dynqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_wdr4r")
+}],
+"loop": true,
+"name": &"press",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wdr4r")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wdr4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dynqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v6rg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nkfx3")
+}],
+"loop": true,
+"name": &"release",
+"speed": 10.0
+}]
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_t7itb")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 64.0
+offset_bottom = 65.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2.03)
+sprite_frames = SubResource("SpriteFrames_m7412")
+animation = &"pressed"
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

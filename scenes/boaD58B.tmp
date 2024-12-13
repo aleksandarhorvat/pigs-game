@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmlo0idbrisul"]
+
+[ext_resource type="Texture2D" uid="uid://fd17b6giplrw" path="res://art/board_background.png" id="1_k6xa3"]
+[ext_resource type="PackedScene" uid="uid://c5au1hha6ke4f" path="res://scenes/dice.tscn" id="2_iiodt"]
+
+[node name="Board" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.760563)
+texture = ExtResource("1_k6xa3")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Dice" parent="." instance=ExtResource("2_iiodt")]
+position = Vector2(549, 327)
