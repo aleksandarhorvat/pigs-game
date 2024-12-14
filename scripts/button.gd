@@ -13,11 +13,6 @@ func _ready() -> void:
 	# Ensure the Timer is stopped initially
 	timer.stop()
 
-	# Connect button signals
-	button.pressed.connect(_on_button_pressed)
-	button.button_up.connect(_on_button_button_up)
-	button.button_down.connect(_on_button_button_down)
-
 func _on_button_button_down() -> void:
 	# Play the 'press' animation
 	animation.play("press")

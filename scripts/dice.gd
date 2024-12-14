@@ -2,14 +2,29 @@ extends Node2D
 
 @onready var animation = $AnimatedSprite2D
 
-func _ready() -> void:
-	# Start the animation
+var current_roll: int = 0  # Store the result of the roll
+
+signal roll_finished(current_roll: int)
+
+func roll() -> void:
+	# Play the dice roll animation
 	animation.play("roll")
-	animation.offset = Vector2(0, 0)  # Reset the offset
+	animation.sprite_frames.set_animation_loop("roll", false)
+	animation.offset = Vector2(0, 0)
 
 	# Wait for the animation to finish
 	await animation.animation_finished
-	apply_dice_roll_effects()  # Call a function to handle what happens next
+	
+	# Generate a random number from 1 to 6
+	current_roll = roll_dice()
+	
+	emit_signal("roll_finished", current_roll)
+	
+	apply_dice_roll_effects()
+
+func roll_dice() -> int:
+	# Generate a random integer between 1 and 6
+	return randi() % 6 + 1
 
 func _process(delta: float) -> void:
 	if animation.is_playing():
@@ -18,16 +33,22 @@ func _process(delta: float) -> void:
 		animation.offset = calculate_offset(current_frame)
 
 func calculate_offset(current_frame: int) -> Vector2:
-	# Define the maximum vertical displacement for the animation
 	var max_displacement = 10  # Adjust this value as needed
-
-	# Calculate the offset based on a parabolic motion
-	# Frames: 0 to 12 (inclusive) with peak at frame 6
-	var offset_y = -max_displacement * (1 - (current_frame - 6) * (current_frame - 6) / 36.0)
-
-	# Return the offset vector
+	var offset_y = -max_displacement * (1 - (current_frame - 5) * (current_frame - 6) / 36.0)
 	return Vector2(0, offset_y)
 
 func apply_dice_roll_effects() -> void:
-	# Handle the outcome of the dice roll animation
-	print("Dice animation completed!")
+	# Switch to the "value" animation without playing it
+	animation.play("value")
+	animation.sprite_frames.set_animation_loop("value", false)
+	animation.stop()  # Stop the animation to show a single frame
+	
+	# Set the frame corresponding to the rolled value
+	var corresponding_frame = current_roll
+	animation.frame = corresponding_frame
+
+	# Adjust the offset based on the last frame of the "roll" animation
+	animation.offset = Vector2(0, 0)
+
+	# Log the completion of the animation
+	print("Dice result displayed: value = ", current_roll)
