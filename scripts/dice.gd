@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		animation.offset = calculate_offset(current_frame)
 
 func calculate_offset(current_frame: int) -> Vector2:
-	var max_displacement = 10  # Adjust this value as needed
+	var max_displacement = 100  # Adjust this value as needed
 	var offset_y = -max_displacement * (1 - (current_frame - 5) * (current_frame - 6) / 36.0)
 	return Vector2(0, offset_y)
 
@@ -45,7 +45,7 @@ func apply_dice_roll_effects() -> void:
 	
 	# Set the frame corresponding to the rolled value
 	var corresponding_frame = current_roll
-	animation.frame = corresponding_frame
+	animation.frame = corresponding_frame - 1
 
 	# Adjust the offset based on the last frame of the "roll" animation
 	animation.offset = Vector2(0, 0)

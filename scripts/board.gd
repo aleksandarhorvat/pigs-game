@@ -9,7 +9,7 @@ extends Node2D
 @onready var temp_label = $Temp
 
 var quota: int = 100
-var pigs: int = 5
+var pigs: int = 0
 var bank: int = 5
 var banked: int = 0
 var temp: int = 0
@@ -35,7 +35,7 @@ func _on_button_pressed() -> void:
 func _on_dice_roll_finished(rolled_value: int) -> void:
 	# Update the temp value and label when the roll finishes
 	if rolled_value == 1:
-		pigs -= rolled_value
+		pigs += rolled_value
 		temp = 0
 		pigs_label.text = "Pigs - " + str(pigs)
 	else:
