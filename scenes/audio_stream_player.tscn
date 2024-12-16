@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://p627xngpmoj1"]
+
+[ext_resource type="AudioStream" uid="uid://ckxx2gxcaa3co" path="res://music/under_hat.mp3" id="1_urcc2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_urcc2")
+volume_db = -20.0
+autoplay = true

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="pigs-game"
-run/main_scene="res://scenes/board.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://art/icon.png"
+
+[autoload]
+
+GlobalAudioStreamPlayer="*res://scenes/audio_stream_player.tscn"
 
 [display]
 

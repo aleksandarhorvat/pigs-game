@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cts263qff55jc"]
+
+[ext_resource type="Script" path="res://start_button.gd" id="1_ie2in"]
+[ext_resource type="Texture2D" uid="uid://dpn856l5yu0m" path="res://art/main_menu_button.png" id="1_ks1bl"]
+[ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="6_s4q26"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3md7y"]
+font = ExtResource("6_s4q26")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Start_Button" type="Node2D"]
+script = ExtResource("1_ie2in")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -48.0
+offset_top = -14.0
+offset_right = 50.0
+offset_bottom = 12.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ks1bl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+text = "Start"
+label_settings = SubResource("LabelSettings_3md7y")
+horizontal_alignment = 1
+vertical_alignment = 1

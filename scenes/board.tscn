@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmlo0idbrisul"]
+[gd_scene load_steps=11 format=3 uid="uid://cmlo0idbrisul"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_atio4"]
 [ext_resource type="Texture2D" uid="uid://cyhptgoelhyrd" path="res://art/board_background.png" id="1_k6xa3"]
 [ext_resource type="PackedScene" uid="uid://c5au1hha6ke4f" path="res://scenes/dice.tscn" id="2_iiodt"]
 [ext_resource type="PackedScene" uid="uid://kmin3qid66hb" path="res://scenes/roll_button.tscn" id="3_hflvi"]
 [ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="5_elm2w"]
-[ext_resource type="AudioStream" uid="uid://ckxx2gxcaa3co" path="res://music/under_hat.mp3" id="6_1hg62"]
 [ext_resource type="PackedScene" uid="uid://c5d8327fdy0yi" path="res://scenes/bank_button.tscn" id="6_4kb3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n3rm"]
@@ -53,11 +52,6 @@ scale = Vector2(0.651042, 0.651)
 texture = ExtResource("1_k6xa3")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_1hg62")
-volume_db = -20.0
-autoplay = true
 
 [node name="Dice" parent="." instance=ExtResource("2_iiodt")]
 position = Vector2(606, 368)
