@@ -71,6 +71,8 @@ func _check_end_game() -> void:
 	if bank <= 0:
 		if banked != quota:
 			_end_game("Game Over: Failed to meet quota!")
+	elif banked >= quota:
+		_end_game("You Win: Quota met!")
 
 func _end_game(message: String) -> void:
 	# Display end game message and disable inputs
