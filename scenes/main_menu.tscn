@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_q617q"]
 [ext_resource type="Texture2D" uid="uid://b0tlufame221a" path="res://art/image.png" id="1_swr26"]
 [ext_resource type="Texture2D" uid="uid://bbom18kxam5xo" path="res://art/pigs/image.png" id="2_d67vw"]
-[ext_resource type="PackedScene" uid="uid://cts263qff55jc" path="res://scenes/start_button.tscn" id="3_dc18i"]
+[ext_resource type="PackedScene" uid="uid://cts263qff55jc" path="res://scenes/menu_button.tscn" id="3_dc18i"]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource("1_q617q")
@@ -19,3 +19,9 @@ texture = ExtResource("2_d67vw")
 
 [node name="Start_Button" parent="." instance=ExtResource("3_dc18i")]
 position = Vector2(625, 350)
+
+[node name="Options_Button" parent="." instance=ExtResource("3_dc18i")]
+position = Vector2(625, 450)
+
+[node name="Quit_Button" parent="." instance=ExtResource("3_dc18i")]
+position = Vector2(625, 550)
