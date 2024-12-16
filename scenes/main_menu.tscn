@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqeu5skkemjfb"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_q617q"]
-[ext_resource type="Texture2D" uid="uid://b4y6pwftx8nmx" path="res://art/image.jpeg" id="2_2bqpi"]
+[ext_resource type="Texture2D" uid="uid://bbxk8d4yaqi6l" path="res://art/main_menu_background.png" id="2_4db1h"]
 [ext_resource type="Texture2D" uid="uid://bbom18kxam5xo" path="res://art/pigs/image.png" id="2_d67vw"]
 [ext_resource type="PackedScene" uid="uid://cts263qff55jc" path="res://scenes/menu_button.tscn" id="3_dc18i"]
 
@@ -9,22 +9,22 @@
 script = ExtResource("1_q617q")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_2bqpi")
+texture = ExtResource("2_4db1h")
 centered = false
 
 [node name="Silent_Pig" type="Sprite2D" parent="."]
-position = Vector2(640, 200)
-scale = Vector2(0.4, 0.4)
+position = Vector2(960, 250)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_d67vw")
 
 [node name="Start_Button" parent="." instance=ExtResource("3_dc18i")]
-position = Vector2(640, 430)
-scale = Vector2(2, 2)
+position = Vector2(960, 600)
+scale = Vector2(3, 3)
 
 [node name="Options_Button" parent="." instance=ExtResource("3_dc18i")]
-position = Vector2(640, 550)
-scale = Vector2(2, 2)
+position = Vector2(960, 800)
+scale = Vector2(3, 3)
 
 [node name="Quit_Button" parent="." instance=ExtResource("3_dc18i")]
-position = Vector2(640, 670)
-scale = Vector2(2, 2)
+position = Vector2(960, 1000)
+scale = Vector2(3, 3)

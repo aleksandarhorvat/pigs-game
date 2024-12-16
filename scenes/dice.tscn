@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://c5au1hha6ke4f"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_mp1uq"]
-[ext_resource type="Texture2D" uid="uid://dvvpv6b2b8nos" path="res://art/six sided die_scaled_17x_pngcrushed.png" id="3_rt4kv"]
+[ext_resource type="Texture2D" uid="uid://bg1p0u4i7a26f" path="res://art/six sided die_scaled_17x_pngcrushed.png" id="3_rt4kv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2boa"]
 atlas = ExtResource("3_rt4kv")
@@ -139,6 +139,6 @@ animations = [{
 script = ExtResource("1_mp1uq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5o6aa")
 animation = &"value"

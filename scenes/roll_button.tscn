@@ -12,14 +12,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_nkfx3")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_nkfx3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_v6rg1")
@@ -62,6 +54,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_3md7y"]
 font = ExtResource("6_rdxww")
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="Roll_Button" type="Node2D"]
@@ -69,22 +62,21 @@ script = ExtResource("1_t7itb")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 33.0
-metadata/_edit_use_anchors_ = true
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2.03)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_m7412")
-animation = &"pressed"
+animation = &"press"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 10.0
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 30.0
+offset_bottom = 19.0
 text = "Roll"
 label_settings = SubResource("LabelSettings_3md7y")
 horizontal_alignment = 1

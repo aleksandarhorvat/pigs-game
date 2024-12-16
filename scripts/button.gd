@@ -5,11 +5,6 @@ extends Node2D
 @onready var timer = $Timer
 
 func _ready() -> void:
-	# Start with the idle animation
-	animation.play("idle")
-	# Set the loop behavior for idle animation
-	animation.sprite_frames.set_animation_loop("idle", false)
-
 	# Ensure the Timer is stopped initially
 	timer.stop()
 
@@ -49,9 +44,3 @@ func calculate_animation_duration(animation_name: String) -> float:
 	var fps = animation.sprite_frames.get_animation_speed(animation_name)
 	# Calculate the duration (frames / fps)
 	return frames / fps
-
-func _on_Timer_timeout():
-	# When the timer finishes, play the idle animation
-	animation.play("idle")
-	# Set the loop behavior for idle animation
-	animation.sprite_frames.set_animation_loop("idle", false)

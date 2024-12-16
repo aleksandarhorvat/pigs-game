@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cts263qff55jc"]
 
-[ext_resource type="Script" path="res://start_button.gd" id="1_ie2in"]
-[ext_resource type="Texture2D" uid="uid://dpn856l5yu0m" path="res://art/main_menu_button.png" id="1_ks1bl"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_ie2in"]
+[ext_resource type="Texture2D" uid="uid://bpj6ccfeqbrl6" path="res://art/main_menu_button.png" id="1_ks1bl"]
 [ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="6_s4q26"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3md7y"]

@@ -12,14 +12,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cledc")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_cledc")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_sgxnq")
@@ -62,6 +54,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_3md7y"]
 font = ExtResource("6_q57ui")
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="Bank_Button" type="Node2D"]
@@ -69,22 +62,22 @@ script = ExtResource("1_nqsre")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 33.0
-metadata/_edit_use_anchors_ = true
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2.03)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_m7412")
-animation = &"pressed"
+animation = &"press"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 10.0
+offset_left = -28.0
+offset_top = -18.0
+offset_right = 32.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 1
 text = "Bank"
 label_settings = SubResource("LabelSettings_3md7y")
 horizontal_alignment = 1
