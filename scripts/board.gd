@@ -28,7 +28,7 @@ func _ready() -> void:
 	pigs_label.text = pigs_label.text + str(pigs)
 	bank_label.text = bank_label.text + str(bank)
 	banked_label.text = banked_label.text + str(banked)
-	temp_label.text = temp_label.text + str(temp)
+	temp_label.text = "Temp " + str(temp) + " x Multi " + str(bankMulti)
 
 func _on_roll_button_pressed() -> void:
 	# Trigger the dice roll when the button is pressed
@@ -37,7 +37,7 @@ func _on_roll_button_pressed() -> void:
 
 func _on_bank_button_pressed() -> void:
 	# Bank the temporary score if conditions are met
-	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
+	_update_multi()
 	if bank > 0 and temp > 0:
 		print("Bank multi: " , bankMulti)
 		banked += temp * bankMulti
@@ -46,7 +46,7 @@ func _on_bank_button_pressed() -> void:
 
 		# Update labels
 		banked_label.text = "Banked - " + str(banked)
-		temp_label.text = "Temp - " + str(temp)
+		temp_label.text = "Temp " + str(temp) + " x Multi " + str(bankMulti)
 		bank_label.text = "Bank - " + str(bank)
 
 	# Disable bank button if bank is 0
@@ -60,13 +60,13 @@ func _on_dice_roll_finished(rolled_value: int) -> void:
 	# Update the temp value and label when the roll finishes
 	if rolled_value == 1:
 		pigs += rolled_value
-		bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
+		_update_multi()
 		print("Bank multi: " , bankMulti)
 		temp = 0
 		pigs_label.text = "Pigs - " + str(pigs)
 	else:
 		temp += rolled_value
-	temp_label.text = "Temp - " + str(temp)
+	temp_label.text = "Temp " + str(temp) + " x Multi " + str(bankMulti)
 
 func _check_end_game() -> void:
 	if bank <= 0:
@@ -81,3 +81,8 @@ func _end_game(message: String) -> void:
 	roll_button.button.disabled = true
 	bank_button.button.disabled = true
 	dice.set_process(false)
+
+func _update_multi():
+	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
+	if bankMulti < 1:
+		_end_game("Multi is lesser then 1")
