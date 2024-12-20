@@ -9,11 +9,12 @@ extends Node2D
 @onready var banked_label = $Banked
 @onready var temp_label = $Temp
 
-var quota: int = 100
+var quota: int = 500
 var pigs: int = 0
 var bank: int = 5
 var banked: int = 0
 var temp: int = 0
+var bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
 
 func _ready() -> void:
 	# Connect the buttons' pressed signals
@@ -36,8 +37,10 @@ func _on_roll_button_pressed() -> void:
 
 func _on_bank_button_pressed() -> void:
 	# Bank the temporary score if conditions are met
+	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
 	if bank > 0 and temp > 0:
-		banked += temp
+		print("Bank multi: " , bankMulti)
+		banked += temp * bankMulti
 		temp = 0
 		bank -= 1
 
@@ -57,12 +60,10 @@ func _on_dice_roll_finished(rolled_value: int) -> void:
 	# Update the temp value and label when the roll finishes
 	if rolled_value == 1:
 		pigs += rolled_value
+		bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
+		print("Bank multi: " , bankMulti)
 		temp = 0
 		pigs_label.text = "Pigs - " + str(pigs)
-
-		# Check if pigs reach 5 to end game
-		if pigs >= 5:
-			_end_game("Game Over: Too many pigs!")
 	else:
 		temp += rolled_value
 	temp_label.text = "Temp - " + str(temp)
