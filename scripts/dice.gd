@@ -10,7 +10,7 @@ signal roll_finished(current_roll: int)
 
 func _ready() -> void:
 	var bus_index = AudioServer.get_bus_index("Dice")
-	AudioServer.set_bus_volume_db(bus_index,-20.0)
+	AudioServer.set_bus_volume_db(bus_index,-80.0)
 
 func roll() -> void:
 	# Play the dice roll animation

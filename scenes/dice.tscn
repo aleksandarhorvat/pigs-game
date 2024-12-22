@@ -242,8 +242,7 @@ script = ExtResource("1_mp1uq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5o6aa")
-animation = &"roll"
-frame = 9
+animation = &"value"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"Dice"
