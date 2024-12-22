@@ -2,10 +2,15 @@ extends Node2D
 
 @onready var animation = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var audio = $AudioStreamPlayer2D
 
 var current_roll: int = 0  # Store the result of the roll
 
 signal roll_finished(current_roll: int)
+
+func _ready() -> void:
+	var bus_index = AudioServer.get_bus_index("Dice")
+	AudioServer.set_bus_volume_db(bus_index,-20.0)
 
 func roll() -> void:
 	# Play the dice roll animation
