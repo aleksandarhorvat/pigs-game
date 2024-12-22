@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_mp1uq"]
 [ext_resource type="Texture2D" uid="uid://bg1p0u4i7a26f" path="res://art/six sided die_scaled_17x_pngcrushed.png" id="3_rt4kv"]
-[ext_resource type="AudioStream" uid="uid://djyypclir67ek" path="res://sounds/roll_sound.mp3" id="3_t6i2i"]
+[ext_resource type="AudioStream" uid="uid://c286apjb5xagp" path="res://sounds/dice_roll.mp3" id="4_4m3hm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2boa"]
 atlas = ExtResource("3_rt4kv")
@@ -153,7 +153,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_h6p2b"]
 resource_name = "roll"
-length = 1.63
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -173,38 +173,38 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166, 0.332, 0.498, 0.666667, 0.83, 0.996, 1.162, 1.328, 1.53333),
+"times": PackedFloat32Array(0, 0.055, 0.109, 0.164, 0.218, 0.273, 0.327, 0.382, 0.436, 0.491),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
-tracks/2/type = "audio"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/path = NodePath("AnimatedSprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 1.28522,
-"start_offset": 1.0098,
-"stream": ExtResource("3_t6i2i")
-}],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0, 0.25, 0.6),
+"transitions": PackedFloat32Array(1, 0.450626, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
 }
-tracks/2/use_blend = false
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:position")
+tracks/3/path = NodePath("AudioStreamPlayer2D")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.62),
-"transitions": PackedFloat32Array(1, 0.450626, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -250), Vector2(0, 0)]
+"clips": [{
+"end_offset": 2.07288,
+"start_offset": 0.0441879,
+"stream": ExtResource("4_4m3hm")
+}],
+"times": PackedFloat32Array(0)
 }
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tmatf"]
 _data = {
