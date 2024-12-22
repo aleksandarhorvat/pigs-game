@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmlo0idbrisul"]
+[gd_scene load_steps=12 format=3 uid="uid://cmlo0idbrisul"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_atio4"]
 [ext_resource type="Texture2D" uid="uid://d1ecsj62t7qiq" path="res://art/board_background.png" id="2_eg0uj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://kmin3qid66hb" path="res://scenes/roll_button.tscn" id="3_hflvi"]
 [ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="5_elm2w"]
 [ext_resource type="PackedScene" uid="uid://c5d8327fdy0yi" path="res://scenes/bank_button.tscn" id="6_4kb3n"]
+[ext_resource type="AudioStream" uid="uid://bksykp1hdlbqh" path="res://sounds/pig_sound.mp3" id="7_ukrra"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n3rm"]
 bg_color = Color(0.0234099, 0.286303, 0.0961706, 1)
@@ -109,3 +110,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_eagry")
 label_settings = SubResource("LabelSettings_3664g")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ukrra")
+volume_db = -10.0

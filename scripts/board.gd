@@ -8,6 +8,7 @@ extends Node2D
 @onready var bank_label = $Bank
 @onready var banked_label = $Banked
 @onready var temp_label = $Temp
+@onready var audio = $AudioStreamPlayer
 
 var quota: int = 500
 var pigs: int = 0
@@ -59,6 +60,7 @@ func _on_bank_button_pressed() -> void:
 func _on_dice_roll_finished(rolled_value: int) -> void:
 	# Update the temp value and label when the roll finishes
 	if rolled_value == 1:
+		audio.play()
 		pigs += rolled_value
 		_update_multi()
 		print("Bank multi: " , bankMulti)
