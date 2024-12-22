@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmlo0idbrisul"]
+
+[ext_resource type="Script" path="res://scripts/board.gd" id="1_atio4"]
+[ext_resource type="Texture2D" uid="uid://d1ecsj62t7qiq" path="res://art/board_background.png" id="2_eg0uj"]
+[ext_resource type="PackedScene" uid="uid://c5au1hha6ke4f" path="res://scenes/dice.tscn" id="2_iiodt"]
+[ext_resource type="PackedScene" uid="uid://kmin3qid66hb" path="res://scenes/roll_button.tscn" id="3_hflvi"]
+[ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="5_elm2w"]
+[ext_resource type="PackedScene" uid="uid://c5d8327fdy0yi" path="res://scenes/bank_button.tscn" id="6_4kb3n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n3rm"]
+bg_color = Color(0.0234099, 0.286303, 0.0961706, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_3664g"]
+font = ExtResource("5_elm2w")
+font_size = 30
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_webpi"]
+bg_color = Color(0.539818, 0, 0.0058901, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eagry"]
+bg_color = Color(0.443137, 0.415686, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+shadow_size = 1
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_atio4")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_eg0uj")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Dice" parent="." instance=ExtResource("2_iiodt")]
+position = Vector2(1200, 630)
+
+[node name="Roll_Button" parent="." instance=ExtResource("3_hflvi")]
+position = Vector2(1080, 870)
+
+[node name="Bank_Button" parent="." instance=ExtResource("6_4kb3n")]
+position = Vector2(1320, 870)
+
+[node name="Quota" type="Label" parent="."]
+offset_top = 60.0
+offset_right = 480.0
+offset_bottom = 120.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2n3rm")
+text = "Quota - "
+label_settings = SubResource("LabelSettings_3664g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pigs" type="Label" parent="."]
+offset_top = 360.0
+offset_right = 240.0
+offset_bottom = 420.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2n3rm")
+text = "Pigs - "
+label_settings = SubResource("LabelSettings_3664g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bank" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 360.0
+offset_right = 480.0
+offset_bottom = 420.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2n3rm")
+text = "Bank - "
+label_settings = SubResource("LabelSettings_3664g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banked" type="Label" parent="."]
+offset_top = 180.0
+offset_right = 480.0
+offset_bottom = 240.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_webpi")
+text = "Banked - "
+label_settings = SubResource("LabelSettings_3664g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Temp" type="Label" parent="."]
+offset_top = 300.0
+offset_right = 480.0
+offset_bottom = 360.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_eagry")
+label_settings = SubResource("LabelSettings_3664g")
+horizontal_alignment = 1
+vertical_alignment = 1

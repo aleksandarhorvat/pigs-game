@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5au1hha6ke4f"]
+[gd_scene load_steps=25 format=3 uid="uid://c5au1hha6ke4f"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_mp1uq"]
 [ext_resource type="Texture2D" uid="uid://bg1p0u4i7a26f" path="res://art/six sided die_scaled_17x_pngcrushed.png" id="3_rt4kv"]
+[ext_resource type="AudioStream" uid="uid://djyypclir67ek" path="res://sounds/roll_sound.mp3" id="3_t6i2i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2boa"]
 atlas = ExtResource("3_rt4kv")
@@ -135,6 +136,82 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Animation" id="Animation_tc5hc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h6p2b"]
+resource_name = "roll"
+length = 1.66
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"roll"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166, 0.332, 0.498, 0.666667, 0.83, 0.996, 1.162, 1.328, 1.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 1.2613,
+"start_offset": 1.0098,
+"stream": ExtResource("3_t6i2i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = false
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.633333, 1.65),
+"transitions": PackedFloat32Array(1, 0.450626, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -250), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmatf"]
+_data = {
+"RESET": SubResource("Animation_tc5hc"),
+"roll": SubResource("Animation_h6p2b")
+}
+
 [node name="Dice" type="Node2D"]
 script = ExtResource("1_mp1uq")
 
@@ -142,3 +219,10 @@ script = ExtResource("1_mp1uq")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5o6aa")
 animation = &"value"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tmatf")
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5d8327fdy0yi"]
+[gd_scene load_steps=10 format=3 uid="uid://c5d8327fdy0yi"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_nqsre"]
 [ext_resource type="Texture2D" uid="uid://dtcuyyokrjo01" path="res://art/button/UI_Flat_Button02a_4.png" id="2_cledc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://doka6xja78g8n" path="res://art/button/UI_Flat_Button02a_2.png" id="4_3jf0y"]
 [ext_resource type="Texture2D" uid="uid://csewtaq52ayfg" path="res://art/button/UI_Flat_Button02a_1.png" id="5_1644p"]
 [ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="6_q57ui"]
+[ext_resource type="AudioStream" uid="uid://djr3kt3b2yrj2" path="res://sounds/bank_sound.mp3" id="7_ankvd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7412"]
 animations = [{
@@ -84,6 +85,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ankvd")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

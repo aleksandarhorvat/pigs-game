@@ -3,6 +3,8 @@ extends Node2D
 @onready var button = $Button
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $Timer
+@onready var label = $Label
+@onready var audio = $AudioStreamPlayer
 
 func _ready() -> void:
 	# Ensure the Timer is stopped initially
@@ -21,6 +23,8 @@ func _on_button_button_down() -> void:
 func _on_button_pressed() -> void:
 	# Play the 'pressed' animation (if needed for a specific action, else remove this)
 	animation.play("pressed")
+	if label.text == "Bank":
+		audio.play()
 	# Set the loop behavior for pressed animation
 	animation.sprite_frames.set_animation_loop("pressed", false)
 

@@ -37,7 +37,6 @@ func _on_roll_button_pressed() -> void:
 
 func _on_bank_button_pressed() -> void:
 	# Bank the temporary score if conditions are met
-	_update_multi()
 	if bank > 0 and temp > 0:
 		print("Bank multi: " , bankMulti)
 		banked += temp * bankMulti
@@ -45,6 +44,7 @@ func _on_bank_button_pressed() -> void:
 		bank -= 1
 
 		# Update labels
+		_update_multi()
 		banked_label.text = "Banked - " + str(banked)
 		temp_label.text = "Temp " + str(temp) + " x Multi " + str(bankMulti)
 		bank_label.text = "Bank - " + str(bank)
