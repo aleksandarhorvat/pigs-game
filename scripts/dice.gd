@@ -9,7 +9,7 @@ var current_roll: int = 0  # Store the result of the roll
 signal roll_finished(current_roll: int)
 
 func _ready() -> void:
-	var bus_index = AudioServer.get_bus_index("DiceRoll")
+	var bus_index = AudioServer.get_bus_index("Dice")
 	AudioServer.set_bus_volume_db(bus_index,-20.0)
 
 func roll() -> void:
