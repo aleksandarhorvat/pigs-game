@@ -1,5 +1,7 @@
 extends Node2D
 
+var save_path = "res://save/save_file.save"
+
 @onready var roll_button = $Roll_Button
 @onready var bank_button = $Bank_Button
 @onready var dice = $Dice
@@ -18,6 +20,8 @@ var temp: int = 0
 var bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
 
 func _ready() -> void:
+	_load_data()
+	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
 	# Connect the buttons' pressed signals
 	roll_button.button.pressed.connect(_on_roll_button_pressed)
 	bank_button.button.pressed.connect(_on_bank_button_pressed)
@@ -79,6 +83,7 @@ func _check_end_game() -> void:
 
 func _end_game(message: String) -> void:
 	# Display end game message and disable inputs
+	_reset_data()
 	print(message)
 	roll_button.button.disabled = true
 	bank_button.button.disabled = true
@@ -88,3 +93,41 @@ func _update_multi():
 	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
 	if bankMulti < 1:
 		_end_game("Multi is lesser then 1")
+
+func _on_main_menu_pressed() -> void:
+	_save()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _save() -> void:
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(quota)
+	file.store_var(pigs)
+	file.store_var(bank)
+	file.store_var(banked)
+	file.store_var(temp)
+	file.close()
+
+func _load_data() -> void:
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		quota = file.get_var()
+		pigs = file.get_var()
+		bank = file.get_var()
+		banked = file.get_var()
+		temp = file.get_var()
+		file.close()
+
+func _reset_data() -> void:
+	quota = 500
+	pigs = 0
+	bank = 5
+	banked = 0
+	temp = 0
+	bankMulti = 1 + (bank * 0.2) - (pigs * 0.1)
+	
+func _on_tree_exiting() -> void:
+	_save()
+
+func _on_options_pressed() -> void:
+	_save()
+	get_tree().change_scene_to_file("res://scenes/options.tscn")

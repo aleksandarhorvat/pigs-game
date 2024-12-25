@@ -1,0 +1,370 @@
+[gd_scene load_steps=11 format=4 uid="uid://dw8jtib8lx3tu"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_bhlfu"]
+[ext_resource type="Texture2D" uid="uid://bbxk8d4yaqi6l" path="res://art/main_menu_background.png" id="1_qewu3"]
+[ext_resource type="Texture2D" uid="uid://7bwohoxhxbxk" path="res://art/frame.png" id="2_1gvcn"]
+[ext_resource type="FontFile" uid="uid://c1bnpe6l2j3lo" path="res://font/Minecraft.ttf" id="3_snrlg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qdt5j"]
+texture = ExtResource("2_1gvcn")
+texture_region_size = Vector2i(64, 71)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_303vi"]
+sources/0 = SubResource("TileSetAtlasSource_qdt5j")
+
+[sub_resource type="LabelSettings" id="LabelSettings_udkpq"]
+font = ExtResource("3_snrlg")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffgmp"]
+font = ExtResource("3_snrlg")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1yo4"]
+font = ExtResource("3_snrlg")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_27pcy"]
+line_spacing = 50.0
+font = ExtResource("3_snrlg")
+font_size = 30
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bhlfu")
+
+[node name="MainMenuBackground" type="Sprite2D" parent="."]
+texture = ExtResource("1_qewu3")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABZAB8AAAADAAEAAABZAB4AAAADAAEAAABZAB0AAAADAAEAAABZABwAAAADAAEAAABZABsAAAADAAEAAAAtACEAAAAAAAEAAAAtACAAAAAAAAEAAAAtAB8AAAAAAAEAAAAtAB4AAAAAAAEAAAAtAB0AAAAAAAEAAAAtABwAAAAAAAEAAAAtABsAAAAAAAEAAAAxABsAAAACAAEAAAAxABwAAAACAAEAAAAxAB0AAAACAAEAAAAxAB4AAAACAAEAAAAxAB8AAAACAAEAAAAxACAAAAACAAEAAABWACAAAAACAAEAAABWAB8AAAACAAEAAABWAB4AAAACAAEAAABWAB0AAAACAAEAAABWABwAAAACAAEAAABWABsAAAACAAEAAABWABoAAAACAAEAAABVABoAAAACAAEAAABVABsAAAACAAEAAABUABsAAAACAAEAAABTABsAAAACAAEAAABSABsAAAACAAEAAABRABsAAAACAAEAAABQABsAAAACAAEAAABPABsAAAACAAEAAABOABsAAAACAAEAAABNABsAAAACAAEAAABMABsAAAACAAEAAABLABsAAAACAAEAAABKABoAAAACAAEAAABJABoAAAACAAEAAABIABoAAAACAAEAAABHABoAAAACAAEAAABGABoAAAACAAEAAABFABoAAAACAAEAAABEABoAAAACAAEAAABDABoAAAACAAEAAABCABoAAAACAAEAAABBABoAAAACAAEAAABAABoAAAACAAEAAAA/ABoAAAACAAEAAAA+ABoAAAACAAEAAAA9ABoAAAACAAEAAAA8ABoAAAACAAEAAAA7ABoAAAACAAEAAAA6ABoAAAACAAEAAAA5ABoAAAACAAEAAAA4ABoAAAACAAEAAAA3ABoAAAACAAEAAAA2ABoAAAACAAEAAAA1ABoAAAACAAEAAAA0ABoAAAACAAEAAAAzABsAAAACAAEAAAAzABwAAAACAAEAAAAzAB0AAAACAAEAAAAzAB4AAAACAAEAAAAzAB8AAAACAAEAAAAzACAAAAACAAEAAAA0ACAAAAACAAEAAAA0AB8AAAACAAEAAAA1AB4AAAACAAEAAAA1AB0AAAACAAEAAAA1ABwAAAACAAEAAAA1AB8AAAACAAEAAAA1ACAAAAACAAEAAAA2ACEAAAACAAEAAAA2ACAAAAACAAEAAAA2AB8AAAACAAEAAAA3AB4AAAACAAEAAAA3AB0AAAACAAEAAAA3ABwAAAACAAEAAAA3AB8AAAACAAEAAAA3ACAAAAACAAEAAAA4ACEAAAACAAEAAAA4ACAAAAACAAEAAAA4AB8AAAACAAEAAAA5AB4AAAACAAEAAAA5AB0AAAACAAEAAAA5ABwAAAACAAEAAAA4AB4AAAACAAEAAAA3ACEAAAACAAEAAAA5ACEAAAACAAEAAAA5ACAAAAACAAEAAAA5AB8AAAACAAEAAAA6AB4AAAACAAEAAAA6AB0AAAACAAEAAAA7ABwAAAACAAEAAAA7ABsAAAACAAEAAAA7AB0AAAACAAEAAAA7AB4AAAACAAEAAAA7AB8AAAACAAEAAAA7ACAAAAACAAEAAAA6ACEAAAACAAEAAAA8ACEAAAACAAEAAAA9ACAAAAACAAEAAAA9AB8AAAACAAEAAAA9AB4AAAACAAEAAAA+AB0AAAACAAEAAAA+ABwAAAACAAEAAAA+ABsAAAACAAEAAABAACEAAAACAAEAAABBACAAAAACAAEAAABBAB8AAAACAAEAAABCAB4AAAACAAEAAABDAB0AAAACAAEAAABEABwAAAACAAEAAABEABsAAAACAAEAAABDAB4AAAACAAEAAABCAB8AAAACAAEAAABCACAAAAACAAEAAABBACEAAAACAAEAAABEACAAAAACAAEAAABEAB8AAAACAAEAAABFAB4AAAACAAEAAABFAB0AAAACAAEAAABGABwAAAACAAEAAABGABsAAAACAAEAAABFAB8AAAACAAEAAABIACAAAAACAAEAAABJAB8AAAACAAEAAABKAB4AAAACAAEAAABKAB0AAAACAAEAAABLABwAAAACAAEAAABMABoAAAACAAEAAABLAB0AAAACAAEAAABKAB8AAAACAAEAAABJACAAAAACAAEAAABMACEAAAACAAEAAABNACAAAAACAAEAAABOAB8AAAACAAEAAABPAB4AAAACAAEAAABQAB0AAAACAAEAAABQABwAAAACAAEAAABPAB0AAAACAAEAAABOACAAAAACAAEAAABNACEAAAACAAEAAABQACEAAAACAAEAAABRACAAAAACAAEAAABRAB8AAAACAAEAAABRAB4AAAACAAEAAABSAB0AAAACAAEAAABSABwAAAACAAEAAABSAB4AAAACAAEAAABSAB8AAAACAAEAAABSACAAAAACAAEAAABRACEAAAACAAEAAABTACAAAAACAAEAAABUAB8AAAACAAEAAABUAB4AAAACAAEAAABUAB0AAAACAAEAAABVABwAAAACAAEAAAAtABYAAAAAAAAAAAAtABkAAAAAAAEAAABZABYAAAADAAAAAABVABYAAAACAAAAAABUABYAAAACAAAAAABTABYAAAACAAAAAABSABYAAAACAAAAAABRABYAAAACAAAAAABQABYAAAACAAAAAABMABYAAAACAAAAAABLABYAAAACAAAAAABKABYAAAACAAAAAABJABYAAAACAAAAAABIABYAAAACAAAAAABHABYAAAACAAAAAABGABYAAAACAAAAAABFABYAAAACAAAAAABEABYAAAACAAAAAABDABYAAAACAAAAAAA/ABYAAAACAAAAAAA7ABYAAAACAAAAAAA3ABYAAAACAAAAAAAzABYAAAACAAAAAAAwABYAAAACAAAAAAAxABkAAAABAAEAAAAyABkAAAABAAEAAAAzABkAAAABAAEAAAA0ABkAAAABAAEAAAA1ABkAAAABAAEAAABTABkAAAABAAEAAABSABkAAAABAAEAAABRABkAAAABAAEAAABQABkAAAABAAEAAABPABkAAAABAAEAAABOABkAAAABAAEAAABPABoAAAABAAEAAABZABkAAAADAAEAAAAoABYAAAADAAAAAAAoABoAAAADAAIAAAAkABYAAAACAAAAAAAkABoAAAACAAIAAAAoAB8AAAADAAAAAAAoACMAAAADAAIAAAAkACMAAAACAAIAAAAkAB8AAAABAAAAAAAtACMAAAAAAAIAAAAxACMAAAACAAIAAAA1ACMAAAACAAIAAAA5ACMAAAACAAIAAAA+ACMAAAACAAIAAAA9ACMAAAACAAIAAABCACMAAAACAAIAAABGACMAAAACAAIAAABKACMAAAACAAIAAABOACMAAAACAAIAAABSACMAAAACAAIAAABWACMAAAACAAIAAABZACMAAAADAAIAAAAfABYAAAAAAAAAAAAfABoAAAAAAAIAAAAhABYAAAABAAAAAAAhABoAAAACAAIAAAAfAB8AAAAAAAAAAAAfACMAAAAAAAIAAAAhAB8AAAABAAAAAAAhACMAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_303vi")
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 490.0
+offset_right = 659.0
+offset_bottom = 580.0
+text = "
+"
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 30.0
+offset_right = 154.0
+offset_bottom = 61.0
+text = "Main Menu
+"
+label_settings = SubResource("LabelSettings_udkpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 348.0
+offset_right = 660.0
+offset_bottom = 438.0
+text = "
+"
+
+[node name="Label" type="Label" parent="Resume"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 30.0
+offset_right = 154.0
+offset_bottom = 61.0
+text = "Game"
+label_settings = SubResource("LabelSettings_udkpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_direction = 3
+layout_mode = 2
+anchor_left = 0.536458
+anchor_top = 0.327778
+anchor_right = 0.536458
+anchor_bottom = 0.533333
+offset_right = 170.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 60
+metadata/_edit_use_anchors_ = true
+
+[node name="Volume" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_ffgmp")
+
+[node name="Resolution" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Resolution
+"
+label_settings = SubResource("LabelSettings_x1yo4")
+
+[node name="Mute" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Mute
+"
+label_settings = SubResource("LabelSettings_27pcy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.333333
+anchor_right = 0.745313
+anchor_bottom = 0.532407
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 71
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Screen resolution"
+popup/item_1/text = "1920 × 1080"
+popup/item_1/id = 1
+popup/item_2/text = "1280 × 720"
+popup/item_2/id = 2
+popup/item_3/text = "720 × 480"
+popup/item_3/id = 3
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

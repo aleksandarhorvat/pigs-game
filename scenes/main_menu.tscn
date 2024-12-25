@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bbom18kxam5xo" path="res://art/pigs/image.png" id="2_d67vw"]
 [ext_resource type="PackedScene" uid="uid://cts263qff55jc" path="res://scenes/menu_button.tscn" id="3_dc18i"]
 
-[node name="Main_Menu" type="Node2D"]
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_q617q")
 
 [node name="Background" type="Sprite2D" parent="."]
