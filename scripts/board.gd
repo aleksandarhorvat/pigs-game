@@ -1,6 +1,6 @@
 extends Node2D
 
-var save_path = "res://save/save_file.save"
+var save_path = "user://save_file.save"
 
 @onready var roll_button = $Roll_Button
 @onready var bank_button = $Bank_Button

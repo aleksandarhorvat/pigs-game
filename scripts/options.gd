@@ -1,6 +1,6 @@
 extends Control
 
-var save_path = "res://save/options_save_file.save"
+var save_path = "user://options_save_file.save"
 
 @onready var h_slider = $MarginContainer/VBoxContainer/HSlider
 @onready var check = $MarginContainer/VBoxContainer/CheckButton

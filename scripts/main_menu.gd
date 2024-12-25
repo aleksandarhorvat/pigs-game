@@ -25,7 +25,7 @@ func _quit_button_pressed() -> void:
 	get_tree().quit()
 
 func _load_settings() -> void:
-	var save_path = "res://save/options_save_file.save"
+	var save_path = "user://options_save_file.save"
 	var dice = AudioServer.get_bus_index("Dice")
 	var master = AudioServer.get_bus_index("Master")
 	
